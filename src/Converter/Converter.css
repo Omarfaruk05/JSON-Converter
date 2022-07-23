@@ -39,7 +39,7 @@ h3{
     width: 45%;
     margin: 10px;
     padding: 10px;
-    font-size: 20px;
+    font-size: 18px;
 }
 .input-field:focus, .display-field:focus{
     border: 1px solid rgb(86, 239, 129);

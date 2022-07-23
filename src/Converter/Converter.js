@@ -9,7 +9,7 @@ const Converter = () => {
 
         try{
             if(inputedJSON) {
-                const formatedJSON = JSON.stringify(JSON.parse(inputedJSON), null, 3);
+                const formatedJSON = JSON.stringify(JSON.parse(inputedJSON), null, 4);
                 displayRef.current.value = formatedJSON;
             }
             else{
@@ -21,15 +21,6 @@ const Converter = () => {
         }
     } 
 
-    const id = [
-        {di:1, name: 'Omar Faruk', profetion: 'React Developer'},
-        {di:1, name: 'Omar Faruk', profetion: 'React Developer'},
-        {di:1, name: 'Omar Faruk', profetion: 'React Developer'},
-        {di:1, name: 'Omar Faruk', profetion: 'React Developer'},
-        {di:1, name: 'Omar Faruk', profetion: 'React Developer'},
-        {di:1, name: 'Omar Faruk', profetion: 'React Developer'},
-    ]
-    console.log(JSON.stringify(id))
 
     const handleDelete = () => {
         inputRef.current.value  = null;
