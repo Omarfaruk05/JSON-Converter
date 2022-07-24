@@ -6,18 +6,19 @@ const Converter = () => {
     const displayRef = useRef();
     const handleConvert = () => {
         const inputedJSON = inputRef.current.value;
-
         try{
-            if(inputedJSON) {
-                const formatedJSON = JSON.stringify(JSON.parse(inputedJSON), null, 4);
-                displayRef.current.value = formatedJSON;
-            }
-            else{
-                displayRef.current.value = 'Please write or past JSON example.' 
-            }
+           
+                if(inputedJSON) {
+                    const formatedJSON = JSON.stringify(JSON.parse(inputedJSON), null, 4);
+                    displayRef.current.value = formatedJSON;
+    
+                }                                    
+                else{
+                    displayRef.current.value = 'Please write or past JSON example.' 
+                }
         }
-        catch{
-            displayRef.current.value = 'Syntext Error.'
+        catch(error){
+            displayRef.current.value = error.message;
         }
     } 
 
@@ -36,7 +37,7 @@ const Converter = () => {
             <h3>Please Input JSON example.</h3>
             <div className='field'>
                 <span>
-                    <textarea ref={inputRef} className='input-field' type="text" name="" id="" placeholder='Input' />
+                    <textarea ref={inputRef} className='input-field' name="" id="" placeholder='Input' />
                 </span>
                 <span>
                     <textarea readOnly ref={displayRef} className='display-field' type="text" name="" id="" placeholder='Output'/>
